@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Wix to Crypto Extension",
+    "version": "1.0",
+    "description": "Extracts total price from Wix and calculates equivalent Pi amount.",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.wix.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ]
+  }
